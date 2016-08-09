@@ -2,7 +2,6 @@ import _ from 'lodash'
 import React from 'react'
 import Imager from '../components/Imager'
 import { storiesOf, action } from '@kadira/storybook'
-import  Highlight from 'react-highlight'
 import '../scss/imagr-theme.scss'
 storiesOf('basic', module)
   .add('load successfully', () => {

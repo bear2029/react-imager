@@ -1,0 +1,65 @@
+@mixin centerize() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imagr{
+  background: #ccc;
+  display: inline-block;
+  position: relative;
+  &:after,
+  &:before,
+  img{
+    opacity: 0;
+    transition: opacity 400ms ease-out;
+    width: auto;
+    height: auto;
+  }
+  &:after,
+  &:before{
+    @include centerize();
+    color: #fff;
+    font-size: 60px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  &:before{
+    content: 'failed';
+  }
+  &:after{
+    content: 'loading';
+  }
+  &.loading:after,
+  &.failed:before,
+  &.loaded img{
+    opacity: 1;
+  }
+  &.restrict-h,
+  &.restrict-v{
+    overflow: hidden;
+  }
+  &.restrict-h{
+    img{
+      max-height: 100%;
+    }
+  }
+  &.restrict-v{
+    img{
+      max-width: 100%;
+    }
+  }
+}
+.example{
+  width: 500px;
+  height: 500px;
+  @include centerize();
+  img{
+    max-width: 500px;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+  }
+}
