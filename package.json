@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "storybook": "start-storybook -p 9001",
-    "demo": "build-storybook -o storybook-build-dir",
+    "demo": "build-storybook -o ../react-imager-storybook",
+    "test:watch": "jest --watch",
     "test": "jest --coverage"
   },
   "keywords": [
@@ -33,6 +34,34 @@
     "eslint": "^3.2.2",
     "eslint-plugin-react": "^6.0.0",
     "immutable": "^3.8.1",
-    "jest-cli": "^14.1.0"
+    "jest-cli": "^14.1.0",
+    "node-sass": "^3.8.0",
+    "postcss-loader": "^0.9.1",
+    "react-addons-test-utils": "^15.3.0",
+    "react-highlight": "^0.8.0",
+    "sass-loader": "^4.0.0"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/jest-preprocessor.js",
+    "testPathDirs": [
+      "./src"
+    ],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/lodash",
+      "<rootDir>/node_modules/fbjs",
+      "<rootDir>/node_modules/react/",
+      "<rootDir>/node_modules/react-addons",
+      "<rootDir>/node_modules/enzyme/",
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-redux"
+    ],
+    "moduleNameMapper": {
+      ".*\\.(scss|css|svg)$": "<rootDir>/assetStub.js"
+    },
+    "preprocessorIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/src/scss"
+    ]
   }
 }
