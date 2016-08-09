@@ -3,6 +3,33 @@
   width: 500px;
   height: 500px;
   @include centerize();
+  &:before{
+    content: 'failed';
+  }
+  &:after{
+    content: 'loading';
+  }
+  &:after,
+  &:before{
+    @include centerize();
+    color: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  &:after,
+  &:before {
+    opacity: 0;
+    transition: opacity 400ms ease-out;
+    width: auto;
+    height: auto;
+  }
+  &.loading:after,
+  &.failed:before{
+    opacity: 1;
+  }
   img{
     max-width: 500px;
     max-height: 500px;

@@ -3,33 +3,12 @@
   background: #ccc;
   display: inline-block;
   position: relative;
-  &:after,
-  &:before,
   img{
     opacity: 0;
     transition: opacity 400ms ease-out;
     width: auto;
     height: auto;
   }
-  &:after,
-  &:before{
-    @include centerize();
-    color: #fff;
-    font-size: 60px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  &:before{
-    content: 'failed';
-  }
-  &:after{
-    content: 'loading';
-  }
-  &.loading:after,
-  &.failed:before,
   &.loaded img{
     opacity: 1;
   }
