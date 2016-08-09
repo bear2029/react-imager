@@ -2,4 +2,4 @@
 /coverage
 /dist
 *compiled.js*
-/storybook-build-dir
+/react-imager-storybook

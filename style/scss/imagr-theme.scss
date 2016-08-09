@@ -1,8 +1,4 @@
-@mixin centerize() {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@import 'base';
 .imagr{
   background: #ccc;
   display: inline-block;
@@ -50,16 +46,5 @@
     img{
       max-width: 100%;
     }
-  }
-}
-.example{
-  width: 500px;
-  height: 500px;
-  @include centerize();
-  img{
-    max-width: 500px;
-    max-height: 500px;
-    width: auto;
-    height: auto;
   }
 }

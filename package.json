@@ -5,9 +5,15 @@
   "main": "index.js",
   "scripts": {
     "storybook": "start-storybook -p 9001",
-    "demo": "build-storybook -o ../react-imager-storybook",
-    "test:watch": "jest --watch",
-    "test": "jest --coverage"
+    "demo": "build-storybook -o ./react-imager-storybook && rsync -avz -C react-imager-storybook/ ../react-imager-storybook/",
+    "test:watch": "NODE_ENV=dev jest --watch",
+    "transpiler": "rm -rf dist && NODE_ENV=production babel src --out-dir dist",
+    "preversion": "npm test && npm run transpiler",
+    "test": "NODE_ENV=production jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bear2029/react-imager"
   },
   "keywords": [
     "react",
@@ -17,11 +23,15 @@
   "author": "bear",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.14.1",
-    "react": "^15.3.0",
-    "react-dom": "^15.3.0"
+    "lodash": "^4.14.1"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
     "@kadira/storybook": "^2.1.1",
     "babel": "^6.5.2",
     "babel-cli": "^6.11.4",

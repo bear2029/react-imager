@@ -1,4 +1,4 @@
-import React, { PropTypes, PureComponent } from 'react'
+import React, { PropTypes, Component } from 'react'
 import _ from 'lodash'
 const RESTRICT_CLASS_VERTICAL = 'restrict-v'
 const RESTRICT_CLASS_HORIZONTAL = 'restrict-h'
@@ -21,7 +21,7 @@ const IMAGER_DEFAULT_PROPS = {
   loadingClass: 'loading',
   loadedClass: 'loaded'
 }
-export default class Imager extends PureComponent {
+export default class Imager extends Component {
   constructor(props){
     super(props)
     _.bindAll(this, 'onLoaded', 'onFailed')

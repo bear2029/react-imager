@@ -2,7 +2,8 @@ import _ from 'lodash'
 import React from 'react'
 import Imager from '../components/Imager'
 import { storiesOf, action } from '@kadira/storybook'
-import '../scss/imagr-theme.scss'
+import '../../style/scss/imagr-theme.scss'
+import '../../style/scss/example.scss'
 storiesOf('basic', module)
   .add('load successfully', () => {
     return (
