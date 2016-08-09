@@ -1,6 +1,6 @@
 {
   "name": "react-imager",
-  "version": "1.0.0",
+  "version": "1.0.0-1",
   "description": "simple image loader writen in react",
   "main": "index.js",
   "scripts": {
