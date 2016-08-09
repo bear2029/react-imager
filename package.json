@@ -1,8 +1,8 @@
 {
   "name": "react-imager",
-  "version": "1.0.0-1",
+  "version": "1.0.0-2",
   "description": "simple image loader writen in react",
-  "main": "index.js",
+  "main": "dist/components/Imager.js",
   "scripts": {
     "storybook": "start-storybook -p 9001",
     "demo": "build-storybook -o ./react-imager-storybook && rsync -avz -C react-imager-storybook/ ../react-imager-storybook/",
