@@ -2,7 +2,6 @@
 .example{
   width: 500px;
   height: 500px;
-  @include centerize();
   &:before{
     content: 'failed';
   }
@@ -11,7 +10,6 @@
   }
   &:after,
   &:before{
-    @include centerize();
     color: #fff;
     position: absolute;
     top: 0;
@@ -29,12 +27,6 @@
   &.loading:after,
   &.failed:before{
     opacity: 1;
-  }
-  img{
-    max-width: 500px;
-    max-height: 500px;
-    width: auto;
-    height: auto;
   }
 }
 

@@ -15,15 +15,12 @@ import '@react-imager/style/scss/imagr-theme.scss'
 ...
 ...
 <Imager
-  crop
   className="imagr example"
   failedClass="failed-custom"
-  height={ 300 }
   laodedClass="loaded-custom"
   loadingClass="loading-custom"
   onFailed={ action('loading failed') }
   onLoaded={ action('loaded') }
   src="http://image.shutterstock.com/z/stock-vector-healthy-vegetables-frame-linear-graphic-vector-illustration-253355536.jpg"
-  width={ 300 }
 />
 ```
